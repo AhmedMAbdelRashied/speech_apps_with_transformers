@@ -4,8 +4,6 @@ Speech-to-speech translation (STST or S2ST) is a relatively new spoken language 
 
 STST can be viewed as an extension of the traditional machine translation (MT) task: instead of translating text from one language into another, we translate speech from one language into another. STST holds applications in the field of multilingual communication, enabling speakers in different languages to communicate with one another through the medium of speech.
 
-we’ll explore a cascaded approach to STST, piecing together the knowledge you’ve acquired in Units 5 and 6 of the course. We’ll use a speech translation (ST) system to transcribe the source speech into text in the target language, then text-to-speech (TTS) to generate speech in the target language from the translated text:
-<img src='https://huggingface.co/datasets/huggingface-course/audio-course-images/resolve/main/s2st_cascaded.png'>
 
 We could also have used a three stage approach, where first we use an automatic speech recognition (ASR) system to transcribe the source speech into text in the same language, then machine translation to translate the transcribed text into the target language, and finally text-to-speech to generate speech in the target language. However, adding more components to the pipeline lends itself to error propagation, where the errors introduced in one system are compounded as they flow through the remaining systems, and also increases latency, since inference has to be conducted for more models.
 
